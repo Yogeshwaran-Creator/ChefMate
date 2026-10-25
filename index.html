@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>ChefMate – South Indian Recipes</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./icon/dish.png" />
+  </head>
+  <body>
+    <nav>
+      <button class="ham" id="ham" aria-label="Menu">
+        <i></i><i></i><i></i>
+      </button>
+      <div class="logo" onclick="go('home')">🍛 Chef<span>Mate</span></div>
+      <div class="search">
+        <i>🔍</i
+        ><input
+          id="q"
+          placeholder="Search dish or ingredient…"
+          autocomplete="off"
+        />
+      </div>
+    </nav>
+    <div class="scrim" id="sc"></div>
+    <aside class="drawer" id="dr"></aside>
+    <main id="app"></main>
+    <footer>Made with ❤️ for food lovers · ChefMate</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
