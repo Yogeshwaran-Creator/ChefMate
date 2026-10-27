@@ -12,7 +12,7 @@ const D = [
     "Soak 5 hrs, ferment 8 hrs, steam 12 min",
     "No veggies. Serve with sambar",
     "Idli batter|2|cup;Water|2|cup;Oil|1|tbsp",
-  ],
+  ], 
   [
     "Crispy Dosa",
     "South Indian",
