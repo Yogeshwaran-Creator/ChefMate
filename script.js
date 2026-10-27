@@ -739,7 +739,7 @@ function render() {
       (view == "All" || d[1] == view) &&
       (d[0] + d[1] + d[7]).toLowerCase().includes(q),
   );
-  a.innerHTML = `<div class="sec"><h2 class="ttl">${view == "All" ? "Search Results" : view}</h2></div><div class="grid">${l.map(card).join("") || '<p class="none">No dishes found 😅 Try another word</p>'}</div>`;
+  a.innerHTML = `<div class="sec" style="margin-top:24px"><button class="back" onclick="go('home')">← Back to Home</button><h2 class="ttl" style="margin-top:18px">${view == "All" ? "Search Results" : view}</h2></div><div class="grid">${l.map(card).join("") || '<p class="none">No dishes found 😅 Try another word</p>'}</div>`;
 }
 const fm = (s) =>
   String(Math.floor(s / 60)).padStart(2, "0") +
