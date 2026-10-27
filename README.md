@@ -73,7 +73,7 @@ The main objective of ChefMate is to provide a convenient platform for users to 
 
 Yogeshwaran R
 
-GitHub: Add your GitHub profile link here.
+GitHub: https://github.com/Yogeshwaran-Creator
 
 ---
 
