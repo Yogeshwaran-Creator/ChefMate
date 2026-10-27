@@ -770,3 +770,74 @@ li {
   padding: 7px 10px;
   margin-top: 8px;
 }
+.ld {
+  position: relative;
+  font-size: 0 !important;
+  color: transparent;
+  overflow: hidden;
+}
+.ld::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(226, 176, 74, 0.28) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shim 1.3s linear infinite;
+}
+.ld::after {
+  content: "Loading image…";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--mu);
+}
+.pic img,
+.dimg img {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+.ld img {
+  opacity: 0;
+}
+@keyframes shim {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+.btn2 {
+  margin-top: 12px;
+  background: none;
+  border: 1px solid var(--ac);
+  color: var(--ac);
+}
+.btn2:hover {
+  background: linear-gradient(135deg, var(--ac), var(--ac2));
+  color: #fff;
+  border-color: transparent;
+}
+.ms {
+  display: flex;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px dashed var(--bd);
+}
+.ms span {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ac), var(--ac2));
+  color: #fff;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+}
+.ms p {
+  font-size: 14px;
+}
