@@ -695,18 +695,18 @@ const stop = () => {
   clearInterval(iv);
   TM = [];
 };
-function go(v) {
+function go(v, to) {
   stop();
   q = "";
   $("#q").value = "";
   view = v;
   render();
-  scrollTo(0, 0);
+  to && $("#" + to) ? $("#" + to).scrollIntoView() : scrollTo(0, 0);
 }
 const home =
   () => `<header class="hero"><small>Authentic · Homestyle · Premium</small><h1>Chef<span>Mate</span></h1><p>Your South Indian cooking companion. Pick a dish, see the ingredients, scale the quantity and cook with built-in timers 🍛</p><button class="btn inl" onclick="go('South Indian')">Explore Recipes →</button></header>
 <section class="sec"><h2 class="ttl">About ChefMate</h2><p class="ab">We bring ${D.length} loved recipes across 10 sections, from tiffin and biriyani to street food and drinks. Every dish shows exact ingredients for your servings and tells you how long the rice and the veggies should cook.</p></section>
-<section class="sec"><h2 class="ttl">Types of Dishes</h2><div class="grid" style="margin:24px 0;padding:0">${CT.map((c, k) => `<article class="card" style="--i:${k}" onclick="go('${c}')"><div class="pic ld">${CI[c][0]}${cimg(c)}</div><div class="in"><span class="tag">${D.filter((d) => d[1] == c).length} recipes</span><h3>${c}</h3><p>${CI[c][1]}</p></div></article>`).join("")}</div></section>
+<section class="sec" id="types" style="scroll-margin-top:80px"><h2 class="ttl">Types of Dishes</h2><div class="grid" style="margin:24px 0;padding:0">${CT.map((c, k) => `<article class="card" style="--i:${k}" onclick="go('${c}')"><div class="pic ld">${CI[c][0]}${cimg(c)}</div><div class="in"><span class="tag">${D.filter((d) => d[1] == c).length} recipes</span><h3>${c}</h3><p>${CI[c][1]}</p></div></article>`).join("")}</div></section>
 <section class="sec"><h2 class="ttl">Our Speciality</h2><div class="fg">${F.map((f) => `<div class="feat"><span>${f[0]}</span><h4>${f[1]}</h4><p>${f[2]}</p></div>`).join("")}</div></section>`;
 
 const CIMG = {};
@@ -739,7 +739,7 @@ function render() {
       (view == "All" || d[1] == view) &&
       (d[0] + d[1] + d[7]).toLowerCase().includes(q),
   );
-  a.innerHTML = `<div class="sec" style="margin-top:24px"><button class="back" onclick="go('home')">← Back to Home</button><h2 class="ttl" style="margin-top:18px">${view == "All" ? "Search Results" : view}</h2></div><div class="grid">${l.map(card).join("") || '<p class="none">No dishes found 😅 Try another word</p>'}</div>`;
+  a.innerHTML = `<div class="sec" style="margin-top:24px"><button class="back" onclick="go('home','types')">← Back to Home</button><h2 class="ttl" style="margin-top:18px">${view == "All" ? "Search Results" : view}</h2></div><div class="grid">${l.map(card).join("") || '<p class="none">No dishes found 😅 Try another word</p>'}</div>`;
 }
 const fm = (s) =>
   String(Math.floor(s / 60)).padStart(2, "0") +
